@@ -28,8 +28,12 @@ mod utils;
 ))]
 use utils::rgb::Rgb;
 
+#[cfg(feature = "serde")]
+use serde::{Deserialize, Serialize};
+
 /// Enum representing dark mode, light mode, or unspecified.
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
+#[cfg_attr(feature = "serde", derive(Deserialize, Serialize))]
 pub enum Mode {
     /// Dark mode
     Dark,

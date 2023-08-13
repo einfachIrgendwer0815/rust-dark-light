@@ -9,9 +9,13 @@ description = "Detect if dark mode or light mode is enabled"
 readme = "README.md"
 build = "build.rs"
 
+[features]
+serde = ["dep:serde"]
+
 [dependencies]
 futures = "0.3.30"
 anyhow = "1.0.79"
+serde = { version = "1.0.183", optional = true }
 
 [dev-dependencies]
 tokio = { version = "1.23.0", features = ["full"] }
